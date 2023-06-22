@@ -3,15 +3,49 @@ import { View,Text,StyleSheet,TextInput } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 
 
-function StartMeeting({name, roomId}) {
-    return ()
-
+function StartMeeting({name, roomId, setName, setRoomID}) {
+    return (
     
+        <View style={styles.startMeetingContainer}>
+            <View style = {styles.info}>
+                <TextInput
+                    style = {styles.TextInput}
+                    value={name}
+                    placeholder='Enter name'
+                    placeholderTextColor="#767476"
+                    onChangeText = {text => setName(text)}
+                />
+            </View> 
+
+            <View style={styles.info}>
+                <TextInput
+                    style = {styles.TextInput}
+                    value={roomId}
+                    placeholder='Enter Room ID'
+                    placeholderTextColor="#767476"
+                    onChangeText = {text => setRoomID(text)}
+                />
+            </View>  
+            <View style ={{ alignItems: "center" }}>
+                <TouchableOpacity
+                onPress = {() =>{}}
+                style = {styles.startMeetingButton}
+                >
+                
+                        <Text style = {{color: "white", fontWeight: "bold"}}>
+                            Start Meeting
+                        </Text>
+
+                </TouchableOpacity>
+            </View>
+        </View>
+
+    )
 }
 
 export default StartMeeting
 
-const Styles = StyleSheet.create({
+const styles = StyleSheet.create({
     
     info: {
         width: "100%",
