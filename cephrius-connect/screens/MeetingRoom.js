@@ -11,8 +11,12 @@ function MeetingRoom() {
   const [name, setName] = useState()
   const [roomId, setRoomID] = useState()
 
+  const joinRoom = () => {
+    socket.emit('join-room', { roomId: roomId, userName: name})
+  }
+  
   useEffect(() =>{
-        const API_URL = " http://localhost:19006 "
+        const API_URL = "https://7e00-2601-2c1-8083-3a00-6053-93fc-a809-97d0.ngrok-free.app"
         socket = io('${API_URL}');
         console.log("Hello")
         socket.on('connection', () =>console.log("connected"))
@@ -32,6 +36,7 @@ function MeetingRoom() {
                 setName ={setName}
                 roomId = {roomId}
                 setRoomID = {setRoomID}
+                joinRoom ={joinRoom}
             />
         </View>
   )

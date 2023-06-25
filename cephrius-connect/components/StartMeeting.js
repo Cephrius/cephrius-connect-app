@@ -3,7 +3,7 @@ import { View,Text,StyleSheet,TextInput } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 
 
-function StartMeeting({name, roomId, setName, setRoomID}) {
+function StartMeeting({name, roomId, setName, setRoomID, joinRoom}) {
     return (
     
         <View style={styles.startMeetingContainer}>
@@ -28,7 +28,7 @@ function StartMeeting({name, roomId, setName, setRoomID}) {
             </View>  
             <View style ={{ alignItems: "center" }}>
                 <TouchableOpacity
-                onPress = {() =>{}}
+                onPress = {() =>joinRoom()}
                 style = {styles.startMeetingButton}
                 >
                 
