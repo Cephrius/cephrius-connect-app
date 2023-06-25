@@ -12,14 +12,14 @@ function MeetingRoom() {
   const [roomId, setRoomID] = useState()
 
   useEffect(() =>{
-        const API_URL = " https://5687-2601-2c1-8083-3a00-f56c-35ac-a4b8-5298.ngrok-free.app "
+        const API_URL = " http://localhost:19006 "
         socket = io('${API_URL}');
         console.log("Hello")
         socket.on('connection', () =>console.log("connected"))
         
   }, [])
 //   skips the browser warning screen
-  fetch(' https://5687-2601-2c1-8083-3a00-f56c-35ac-a4b8-5298.ngrok-free.app', {
+  fetch('https://ee0a-2601-2c1-8083-3a00-14c0-55d5-f22c-7223.ngrok-free.app', {
             headers: {
         'ngrok-skip-browser-warning': 'true' // Set the header with the desired value
   }
