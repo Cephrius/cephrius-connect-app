@@ -19,7 +19,7 @@ function MeetingRoom() {
         
   }, [])
 //   skips the browser warning screen
-  fetch('https://ee0a-2601-2c1-8083-3a00-14c0-55d5-f22c-7223.ngrok-free.app', {
+  fetch('${API_URL}', {
             headers: {
         'ngrok-skip-browser-warning': 'true' // Set the header with the desired value
   }
