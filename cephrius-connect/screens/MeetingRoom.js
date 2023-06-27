@@ -10,6 +10,7 @@ function MeetingRoom() {
 
   const [name, setName] = useState()
   const [roomId, setRoomID] = useState()
+  const [activeUsers, setActiveUsers] = useState();
 
   const joinRoom = () => {
     socket.emit('join-room', { roomId: roomId, userName: name})
@@ -19,8 +20,10 @@ function MeetingRoom() {
         const API_URL = "https://7e00-2601-2c1-8083-3a00-6053-93fc-a809-97d0.ngrok-free.app"
         socket = io('${API_URL}');
         console.log("Hello")
-        socket.on('connection', () =>console.log("connected"))
-        
+        socaket.on('connection', () =>console.log("connected"))
+          console.log("Active Users");
+          console.log(users)
+          setActiveUsers(users)
   }, [])
 //   skips the browser warning screen
   fetch('${API_URL}', {
