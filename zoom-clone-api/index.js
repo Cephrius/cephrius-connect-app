@@ -28,9 +28,9 @@ const getRoomUsers = (roomId) => {
 }
 
 io.on("connection", socket => {
-    console.log("Someone is connected")
+    console.log("Someone connected")
     socket.on("join-room", ({ roomId, userName })=>{
-        console.log("User Joined Room");
+        console.log("User Joined Room")
         console.log(roomId);
         console.log(userName);
         socket.join(roomId);
@@ -45,7 +45,6 @@ io.on("connection", socket => {
             userLeave(userName)
             io.to(roomId).emit("all-users", getRoomUsers(roomId))
         })
-
     })
 })
 
