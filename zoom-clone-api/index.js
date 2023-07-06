@@ -8,7 +8,7 @@ const users =[]
 const port = 3001
 
 app.get("/", (req, res) => {
-    res.send("Hellow World")
+    res.send("Hello World")
 })
 
 const addUser = (userName,roomId) => {

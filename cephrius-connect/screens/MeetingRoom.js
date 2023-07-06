@@ -43,23 +43,22 @@ let socket;
 function MeetingRoom() { 
   const [name, setName] = useState()
   const [roomId, setRoomID] = useState()
-  const [activeUsers, setActiveUsers] = useState("Chiedozie", "John", "Jane");
+  const [activeUsers, setActiveUsers] = useState(["Chiedozie", "John", "Jane"]);
   const [startCamera, setStartCamera ] = useState(false);
 
   const __startCamera = async () => {
-    const { status } = await Camera.requestPermissionsAsync();
+    const { status } = await Camera.requestCameraPermissionsAsync();
     if (status === "granted"){
         setStartCamera(true);
         } else {
             Alert.alert("Access denied");
         }
-    }
+    };
   
-
   const joinRoom = () => {
       __startCamera();
       socket.emit('join-room', { roomId: roomId, userName: name})
-  }
+  };
   
   useEffect(() =>{
         socket = io("https://eaba-2601-2c1-8083-3a00-69e2-37b2-8985-605e.ngrok-free.app")
@@ -71,11 +70,7 @@ function MeetingRoom() {
           })
   }, [])
 //   skips the browser warning screen
-  fetch('${API_URL}', {
-            headers: {
-        'ngrok-skip-browser-warning': 'true' // Set the header with the desired value
-  }
-})
+
   return (
         <View style={styles.container}>
             {/* Start Meeting section */}
@@ -85,11 +80,12 @@ function MeetingRoom() {
                        <Camera 
                       type= {"front"}
                       style={{ width: "100%", height: 600}}
+                      
                   >
                   </Camera>  
                   {activeUsers.map((user, index) =>
                     <View key={ index } style={styles.activeUsersContainer}>
-                        <Text>{user}</Text>
+                        <Text style = {{ color: "white"}}>{user}</Text>
                     </View>
                   )}
                 </View>
