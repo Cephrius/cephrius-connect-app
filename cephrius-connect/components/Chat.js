@@ -1,10 +1,10 @@
-import React { useState } from 'react'
+import React, { useState } from "react"
 import { View,Text,StyleSheet, TextInput, SafeAreaView } from "react-native"
-import chatHeader from './chatHeader'
+import chatHeader from './ChatHeader'
 
 function Chat({ setModalVisible }) {
-
   const [ messageText, setMessageText ] = useState()
+
   return (
     <View style = {styles.container}>
         <SafeAreaView style={{height: "100%"}}>
@@ -25,7 +25,7 @@ function Chat({ setModalVisible }) {
                   />
               </View>
           </View>
-        </SafeAreaView>
+        </SafeAreaView> 
     </View>
   )
 }

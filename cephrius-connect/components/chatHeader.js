@@ -2,7 +2,7 @@ import React from 'react'
 import { Pressable,View,Text,StyleSheet, TextInput,} from "react-native"
 import Entypo from "react-native-vector-icons/Entypo";
 
-function chatHeader({ setModalVisible }) {
+function ChatHeader({ setModalVisible }) {
   return (
     <View style={styles.container}>
         <Pressable onPress={() =>setModalVisible(false)}>
@@ -16,7 +16,7 @@ function chatHeader({ setModalVisible }) {
   )
 }
 
-export default chatHeader
+export default ChatHeader
 
 const styles = StyleSheet.create({
     container: {
