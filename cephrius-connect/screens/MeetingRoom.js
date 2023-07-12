@@ -137,7 +137,7 @@ function MeetingRoom() {
                     onPress={() =>setModalVisiable(true)}
                     style = {styles.tile}
                           >
-                      <FontAwesome name= { "Comment" } size={23} color= {"#efefef"} />
+                      <FontAwesome name= { "comment" } size={23} color= {"#efefef"} />
                       <Text style={styles.textTile}> { "chat" } </Text>
                   </TouchableOpacity>
                 </View>
